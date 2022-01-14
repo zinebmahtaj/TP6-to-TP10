@@ -1,13 +1,12 @@
 package cigma.pfe.repositories;
+
 import cigma.pfe.models.Client;
 
-public class ClientRepositoryImpl implements ClientRepository {
+public class ClientRepositoryImpl implements cigma.pfe.repositories.ClientRepository {
+    javax.persistence.EntityManagerFactory emf;
+    javax.persistence.EntityManager em;
 
-    public Client save(Client c) {
-        System.out.println("DAO Layer : ClientRepositoryImpl Level");
-        return null;
-    }
-    public ClientRepositoryImpl() {
-        System.out.println("Call ClientRepositoryImpl ....");
-    }
+    public void save(Client c) { /* compiled code */ }
+
+    public ClientRepositoryImpl() { /* compiled code */ }
 }
