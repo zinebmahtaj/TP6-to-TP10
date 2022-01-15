@@ -1,16 +1,20 @@
 package cigma.pfe.services;
 
+import cigma.pfe.repositories.ClientRepository;
 import cigma.pfe.models.Client;
+public class ClientServiceImpl implements ClientService {
+    private ClientRepository dao;
 
-public class ClientServiceImpl implements cigma.pfe.services.ClientService {
-    cigma.pfe.repositories.ClientRepository clientRepository;
-    cigma.pfe.repositories.ClientRepository ClientRepository;
-
-    public Client save(Client c) { /* compiled code */
-        return c;
+    public ClientServiceImpl(ClientRepository dao) {
+        this.dao = dao;
     }
 
-    public ClientServiceImpl() { /* compiled code */ }
-
-    public ClientServiceImpl(cigma.pfe.repositories.ClientRepository clientRepository) { /* compiled code */ }
+    @Override
+    public Client save(Client c) {
+        return dao.save(c);
+    }
+    @Override
+    public Client modify(Client c) {
+        return dao.update(c);
+    }
 }

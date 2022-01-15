@@ -1,12 +1,23 @@
 package cigma.pfe.repositories;
-
 import cigma.pfe.models.Client;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-public class ClientRepositoryImpl implements cigma.pfe.repositories.ClientRepository {
-    javax.persistence.EntityManagerFactory emf;
-    javax.persistence.EntityManager em;
+public class ClientRepositoryImpl implements ClientRepository{
+    EntityManagerFactory emf=Persistence.createEntityManagerFactory("unit_clients");
+    EntityManager em=emf.createEntityManager();
+    public ClientRepositoryImpl() {
+    } @Override
+    public Client save(Client c) {
+        em.getTransaction().begin();
+        em.persist(c);
+        em.getTransaction().commit();
+        return c;
+    }
 
-    public void save(Client c) { /* compiled code */ }
-
-    public ClientRepositoryImpl() { /* compiled code */ }
+    @Override
+    public Client update(Client c) {
+        return null;
+    }
 }

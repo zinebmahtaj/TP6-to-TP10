@@ -1,18 +1,27 @@
 package cigma.pfe.models;
-
-@javax.persistence.Entity(name = "TClients")
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.*;
+@Getter
+@Setter
+@AllArgsConstructor
+@Entity(name = "TClients")
 public class Client {
-    @javax.persistence.Id
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @javax.persistence.Column
-    private java.lang.String name;
-
-    public Client(java.lang.String name) { /* compiled code */ }
-
-    public Client() { /* compiled code */ }
-
-    public  java.lang.String toString(){ /* compiled code */
-        return null;
+    public Client(String name) {
+        this.name = name;
+    } public Client(int i, String new_name) {
+    } @
+            Column
+    private String name;
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
