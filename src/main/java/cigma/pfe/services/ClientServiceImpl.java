@@ -7,6 +7,7 @@ public class ClientServiceImpl implements ClientService {
 
     public ClientServiceImpl(ClientRepository dao) {
         this.dao = dao;
+
     }
 
     @Override

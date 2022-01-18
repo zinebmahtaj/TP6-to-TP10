@@ -4,8 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import static javax.persistence.Persistence.createEntityManagerFactory;
+
 public class ClientRepositoryImpl implements ClientRepository{
-    EntityManagerFactory emf=Persistence.createEntityManagerFactory("unit_clients");
+    EntityManagerFactory emf= createEntityManagerFactory("unit_clients");
     EntityManager em=emf.createEntityManager();
     public ClientRepositoryImpl() {
     } @Override
@@ -14,6 +16,7 @@ public class ClientRepositoryImpl implements ClientRepository{
         em.persist(c);
         em.getTransaction().commit();
         return c;
+
     }
 
     @Override
