@@ -5,11 +5,36 @@
           scope="prototype">
         <constructor-arg ref="service"/>
     </bean>
+
     <bean id="service" class="cigma.pfe.services.ClientServiceImpl"
           scope="prototype">
         <constructor-arg ref="repository"/>
     </bean>
+
     <bean id="repository"
           class="cigma.pfe.repositories.ClientRepositoryImpl"
-          scope="prototype"></bean>
+          scope="prototype">
+
+    </bean>
+    <!-- -->
+    <!-- beans Factures -->
+
+    <bean id="fcontroller" class="cigma.pfe.controllers.FactureControllerImpl"
+          scope="prototype">
+        <constructor-arg ref="fservice"/>
+    </bean>
+
+    <bean id="fservice" class="cigma.pfe.services.FactureServiceImpl"
+          scope="prototype">
+        <constructor-arg ref="repository"/>
+    </bean>
+
+    <bean id="frepository"
+          class="cigma.pfe.repositories.FactureRepositoryImpl"
+          scope="prototype">
+
+    </bean>
+
 </beans>
+
+

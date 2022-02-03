@@ -16,8 +16,19 @@ public class Promotion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String description;
+
     public Promotion(String description) {
         this.description = description;
 
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public String toString(){
+        return "Promotion{" +
+                "id=" +id +
+                ", description=' " + description + '\''+
+                '}';
     }
 }

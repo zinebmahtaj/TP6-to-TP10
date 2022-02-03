@@ -1,6 +1,7 @@
 package cigma.pfe;
 import cigma.pfe.models.CarteFidelio;
 import cigma.pfe.models.Client;
+import cigma.pfe.models.Facture;
 import cigma.pfe.models.Promotion;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
