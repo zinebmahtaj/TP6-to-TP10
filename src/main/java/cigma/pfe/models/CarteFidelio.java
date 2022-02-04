@@ -37,8 +37,8 @@ public class CarteFidelio {
         return client;
     }
 
-    public void setClient() {
-        this.client = client;
+    public void setClient(Client client) {
+        this.client = this.client;
     }
     @Override
     public String toString() {

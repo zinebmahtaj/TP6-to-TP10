@@ -19,10 +19,10 @@ public class Adresse {
     private String pays;
 
     @OneToOne()
-    @JoinColumn(name="client_id")
+    @JoinColumn(name = "client_id")
     private Client client;
 
-    public Adresse(){
+    public Adresse() {
     }
 
     public Adresse(String avenue, String ville, String pays) {
@@ -30,7 +30,8 @@ public class Adresse {
         this.ville = ville;
         this.pays = pays;
     }
+
     @OneToMany
     @JoinColumn(name= "adresse_id")
-    private Client client;
+    private Adresse adresse;
 }

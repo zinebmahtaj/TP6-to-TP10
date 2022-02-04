@@ -34,7 +34,37 @@
           scope="prototype">
 
     </bean>
+    <!-- -->
+    <!-- beans Adresse -->
 
+    <bean id="Adresse"
+          class="cigma.pfe.models.Adresse"
+          scope="prototype">
+
+    </bean>
+    <!-- -->
+    <!-- beans Produit -->
+
+    <bean id="Produit"
+          class="cigma.pfe.models.Produit"
+          scope="prototype">
+    </bean>
+
+    <!-- -->
+    <!-- beans Promotion -->
+
+    <bean id="Promotion"
+          class="cigma.pfe.models.Promotion"
+          scope="prototype">
+    </bean>
+
+    <!-- -->
+    <!-- beans CarteFidelio -->
+
+    <bean id="CarteFidelio"
+          class="cigma.pfe.models.CarteFidelio"
+          scope="prototype">
+    </bean>
 </beans>
 
 
