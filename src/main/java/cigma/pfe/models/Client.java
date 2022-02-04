@@ -1,13 +1,17 @@
 package cigma.pfe.models;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import javax.persistence.*;
 import java.util.List;
+@Data
+@Entity
 @Getter
 @Setter
-@Entity
-@ToString
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name="client_type")
+@DiscriminatorValue("client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

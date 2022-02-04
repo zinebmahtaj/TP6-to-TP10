@@ -22,13 +22,15 @@ public class Adresse {
     @JoinColumn(name = "client_id")
     private Client client;
 
-    public Adresse() {
+    public Adresse(Adresse adresse) {
+        this.adresse = adresse;
     }
 
-    public Adresse(String avenue, String ville, String pays) {
+    public Adresse(String avenue, String ville, String pays, Adresse adresse) {
         this.avenue = avenue;
         this.ville = ville;
         this.pays = pays;
+        this.adresse = adresse;
     }
 
     @OneToMany
