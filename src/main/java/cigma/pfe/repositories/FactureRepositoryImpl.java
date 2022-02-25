@@ -37,10 +37,7 @@ public class FactureRepositoryImpl implements FactureRepository {
 
     @Override
     public Facture update(Facture f) {
-        em.getTransaction().begin();
-        Facture currentFacture = em.find(Facture.class,f.getId());
-        em.persist(currentFacture);
-        em.getTransaction().commit();
+
         return null;
     }
 

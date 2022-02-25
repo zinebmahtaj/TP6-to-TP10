@@ -1,4 +1,4 @@
 package cigma.pfe.services;
 
-public class AdresseService {
+public interface AdresseService {
 }

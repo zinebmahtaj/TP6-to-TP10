@@ -1,10 +1,11 @@
 package cigma.pfe.repositories;
 import cigma.pfe.models.Client;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ClientRepository {
-    Client save(Client c);
+import java.util.List;
 
-    Client update(Client c);
-
-
+@Repository
+public interface ClientRepository extends CrudRepository<Client,Long> {
+    List<Client> findByName(String name);
 }

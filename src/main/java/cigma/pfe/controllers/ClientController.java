@@ -1,24 +1,29 @@
 package cigma.pfe.controllers;
 import cigma.pfe.services.ClientService;
 import cigma.pfe.models.Client;
-import cigma.pfe.services.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/client")
 public class ClientController {
-    private ClientService service ;
     @Autowired
-
-    public ClientController(ClientService service) {
-        this.service = service;
-        System.out.println("creation bean controller");
+    private ClientService service;
+    @GetMapping("/{id}")
+    public Client getOne(@PathVariable("id") long id){
+        return service.getOne(id);
     }
-
-    public void save(Client c) {
-        service.save(c);
+    @GetMapping("/all")
+    public List<Client> getAll(){
+        return service.getAll();
     }
-    public void modify(Client c){
-        service.modify(c);
+    @PostMapping("/create")
+    public Client save(@RequestBody Client clt) {
+        return service.save(clt);
+    }
+    @PutMapping("/update")
+    public Client modify(@RequestBody Client clt){
+        return service.modify(clt);
     }
 }
