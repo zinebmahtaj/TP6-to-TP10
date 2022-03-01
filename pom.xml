@@ -14,8 +14,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <relativePath/>
     </parent>
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
     <dependencies>
         <!-- Spring Data Starter -->
@@ -29,11 +29,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- MySQL Driver -->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.6</version>
+            <version>8.0.27</version>
         </dependency>
+
         <!-- Lombok Annotations -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -46,26 +48,5 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.5.6</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.3.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.3.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.3.8</version>
-        </dependency>
-    </dependencies>
+         </dependencies>
 </project>
