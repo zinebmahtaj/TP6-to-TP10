@@ -3,20 +3,22 @@ package ma.cigma.config.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.net.PasswordAuthentication;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    /**
+     *
+     */
     @Autowired
     PasswordEncoder passwordEncoder;
+
     //Authentication
-    @Override
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception{
+    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder, Object HttpSecurity, HttpSecurity http) throws Exception {
         authenticationManagerBuilder
                 .inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder)
@@ -25,11 +27,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("admin").password(passwordEncoder.encode("123456"))
                 .roles("ADMIN ");
         @Override
-        protected void configure(HttpSecurity http) throws Exception {
+        protected void configure (HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
                     .antMatchers(
-                            "/add-client","/show-client/**"
+                            "/add-client", "/show-client/**"
                     )
                     .hasRole("USER")
                     .antMatchers(
@@ -37,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     )
                     .hasRole("ADMIN")
                     .antMatchers(
-                            "/clients","/"
+                            "/clients", "/"
                     )
                     .permitAll()
                     .anyRequest()
@@ -47,5 +49,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .defaultSuccessUrl("/clients");
         }
     }
-
 }
