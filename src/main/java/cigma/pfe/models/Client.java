@@ -2,6 +2,8 @@ package cigma.pfe.models;
 import lombok.*;
 import javax.persistence.*;
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @Entity(name = "Tclients")
 public class Client {

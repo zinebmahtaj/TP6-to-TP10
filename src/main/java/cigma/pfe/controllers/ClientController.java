@@ -26,4 +26,12 @@ public class ClientController {
     public Client modify(@RequestBody Client clt){
         return service.modify(clt);
     }
+    @DeleteMapping("/delete/{id}")
+    public void remove(@PathVariable("id") long id) {
+       service.remove(id);
+    }
+
+    public List<Client> Find(String name){
+        return service.Find(name);
+    }
 }

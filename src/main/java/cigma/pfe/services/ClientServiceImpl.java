@@ -8,39 +8,44 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 @Service
 public class ClientServiceImpl implements ClientService {
+
     @Autowired
-    private ClientRepository dao;
+    ClientRepository clientRepository;
+
 
     @Override
-    @Transactional
     public Client save(Client clt) {
-        return dao.save(clt);
+        return clientRepository.save(clt);
     }
 
     @Override
-    @Transactional
-    public Client modify(Client newClt) {
-        Client oldClt = dao.findById(newClt.getId()).get();
-        oldClt.setName(newClt.getName());
-        return dao.save(oldClt);
+    public Client modify(Client clt) {
+
+     Client   oldClient = clientRepository.findById(clt.getId()).get();
+
+     oldClient.setName(clt.getName());
+        return clientRepository.save(oldClient);
     }
 
     @Override
     @Transactional
     public void remove(long idClt) {
-        dao.deleteById(idClt);
+        clientRepository.deleteById(idClt);
     }
 
     @Override
     public Client getOne(long idClt) {
-        return dao.findById(idClt).get();
+        return clientRepository.findById(idClt).get();
     }
 
     @Override
     public List<Client> getAll() {
-        return (List<Client>) dao.findAll();
+        return (List<Client>) clientRepository.findAll();
+    }
+
+    public  List<Client> Find(String clt){
+        return clientRepository.findByName(clt);
     }
 }

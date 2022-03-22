@@ -9,4 +9,5 @@ public interface ClientService {
     void remove(long idClt);
     Client getOne(long idClt);
     List<Client> getAll();
+    List <Client> Find(String clt);
 }
