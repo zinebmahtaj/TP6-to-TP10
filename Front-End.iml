@@ -15,6 +15,16 @@
     <facet type="Spring" name="Spring">
       <configuration />
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="Front-End" />
+        </datasource-mapping>
+        <naming-strategy-map />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -27,11 +37,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.1" level="project" />
-    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:2.6.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.6.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.6.4" level="project" />
@@ -52,8 +57,17 @@
     <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-security:2.6.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.16" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.16" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.16" level="project" />
+    <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:bootstrap:4.0.0-2" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:popper.js:1.12.9-1" level="project" />
@@ -66,7 +80,6 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.58" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.58" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.58" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.16" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.16" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:2.6.4" level="project" />
@@ -99,10 +112,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.16" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.16" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.4" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.6.2" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.6.2" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.16" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.16" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.16" level="project" />
   </component>
 </module>

@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Front-End-0.0.1-SNAPSHOT.war">
+    <root id="archive" name="MonTP6.war">
       <element id="artifact" artifact-name="Front-End:war exploded" />
     </root>
   </artifact>

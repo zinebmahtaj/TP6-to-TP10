@@ -11,23 +11,28 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-    /**
-     *
-     */
+
     @Autowired
     PasswordEncoder passwordEncoder;
 
     //Authentication
-    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder, Object HttpSecurity, HttpSecurity http) throws Exception {
+    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
                 .inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder)
                 .withUser("user")
-                .password(passwordEncoder.encode("123456")).roles("USER").and()
-                .withUser("admin").password(passwordEncoder.encode("123456"))
-                .roles("ADMIN ");
-        @Override
-        protected void configure (HttpSecurity http) throws Exception {
+                .password(passwordEncoder.encode("654321")).roles("USER").and()
+                .withUser("admin").password(passwordEncoder.encode("654321"))
+                .roles("ADMIN").and()
+                .withUser("user1")
+                .password(passwordEncoder.encode("123456")).roles("USER");
+    }
+
+
+
+    //Authentication
+
+        protected void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
                     .antMatchers(
@@ -39,14 +44,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     )
                     .hasRole("ADMIN")
                     .antMatchers(
-                            "/clients", "/"
+                            "/client", "/"
                     )
                     .permitAll()
                     .anyRequest()
                     .authenticated()
                     .and()
                     .formLogin()
-                    .defaultSuccessUrl("/clients");
+                    .defaultSuccessUrl("/client");
         }
     }
-}
